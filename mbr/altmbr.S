@@ -231,6 +231,7 @@ scan_partition_table:
 	jnz	10f
 	movl	%eax, %edx		/* Offset -> root if this was MBR */
 10:
+	pushw	%cx
 	call	read_partition_table
 	jc	11f
 	call	scan_partition_table
@@ -238,6 +239,7 @@ scan_partition_table:
 	/* This returned, so we need to reload the current partition table */
 	movl	28(%bp), %eax		/* "Base" */
 	call	read_partition_table
+	popw	%cx
 
 	/* fall through */
 9:
