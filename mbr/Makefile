@@ -19,9 +19,9 @@ VPATH = $(SRC)
 
 include $(MAKEDIR)/embedded.mk
 
-all:	mbr.bin   altmbr.bin   gptmbr.bin   isohdpfx.bin   isohdppx.bin \
-	mbr_c.bin altmbr_c.bin gptmbr_c.bin isohdpfx_c.bin isohdppx_c.bin \
-	mbr_f.bin altmbr_f.bin gptmbr_f.bin isohdpfx_f.bin isohdppx_f.bin
+all:	mbr.bin   altmbr.bin   gptmbr.bin   isohdpfx.bin   isohdppx.bin   oncembr.bin \
+	mbr_c.bin altmbr_c.bin gptmbr_c.bin isohdpfx_c.bin isohdppx_c.bin oncembr_c.bin \
+	mbr_f.bin altmbr_f.bin gptmbr_f.bin isohdpfx_f.bin isohdppx_f.bin oncembr_f.bin
 
 %.o: %.S
 	$(CC) $(MAKEDEPS) $(SFLAGS) -Wa,-a=$*.lst -c -o $@ $<

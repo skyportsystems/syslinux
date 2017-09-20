@@ -31,6 +31,8 @@ if (!defined($maxsize)) {
 	$maxsize = $padsize = 432;
     } elsif ($file =~ /^altmbr[^0-9a-z]/) {
 	$maxsize = $padsize = 439;
+    } elsif ($file =~ /^oncembr[^0-9a-z]/) {
+	$maxsize = $padsize = 440;
     } else {
 	die "$0: no default size for filename: $file\n";
     }
